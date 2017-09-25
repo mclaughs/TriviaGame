@@ -1,11 +1,8 @@
 $(document).ready(function() {
 
-  var counter = 0;
-  var right = 0
-  var wrong = 0
+  function wrapup() {
 
-  function results() {
-
+    counter = 0;
     $('.card-text').fadeOut();
     var ans1 = $('input[name=1]:checked').val()
     var ans2 = $('input[name=2]:checked').val()
@@ -70,9 +67,10 @@ $(document).ready(function() {
     }
 
     $('#score').text("Correct: " + right + " Incorrect: " + wrong);
+    // console.log(ans1, ans2)
   }
-
-  counter = 45;
+  
+  var counter = 30;
   $('.card-text').hide();
 
   $('#start').on('click', function() {
@@ -86,17 +84,20 @@ $(document).ready(function() {
       if (counter > 0) {
         counter--;
         setTimeout(countDown, 1000);
-      }
-      else if (counter === 0)
-      {
-        results();
+      } else if (counter == 0) {
+
+        $('#score').text("Correct: " + right + " Incorrect: " + wrong);
+
       }
       $('#timer').text('time: ' + counter + ' sec')
     }
   })
+  var right = 0
+  var wrong = 0
 
-  $('#submit').on('click', function() {
-    results();
+  $('#submit').on('click',
+
   })
+
 
 });
