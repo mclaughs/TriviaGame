@@ -7,79 +7,81 @@ $(document).ready(function() {
 
   function results() {
 
-    $('.card-text').fadeOut();
-    var ans1 = $('input[name=1]:checked').val()
-    var ans2 = $('input[name=2]:checked').val()
-    var ans3 = $('input[name=3]:checked').val()
-    var ans4 = $('input[name=4]:checked').val()
-    var ans5 = $('input[name=5]:checked').val()
-    var ans6 = $('input[name=6]:checked').val()
-    var ans7 = $('input[name=7]:checked').val()
-    var ans8 = $('input[name=8]:checked').val()
-    var ans9 = $('input[name=9]:checked').val()
-    var ans10 = $('input[name=10]:checked').val()
+    $(".card-text").fadeOut();
+    var ans1 = $("input[name=1]:checked").val()
+    var ans2 = $("input[name=2]:checked").val()
+    var ans3 = $("input[name=3]:checked").val()
+    var ans4 = $("input[name=4]:checked").val()
+    var ans5 = $("input[name=5]:checked").val()
+    var ans6 = $("input[name=6]:checked").val()
+    var ans7 = $("input[name=7]:checked").val()
+    var ans8 = $("input[name=8]:checked").val()
+    var ans9 = $("input[name=9]:checked").val()
+    var ans10 = $("input[name=10]:checked").val()
 
-    if (ans1 === 'New York Mets') {
+    if (ans1 === "New York Mets") {
       right++
     } else {
       wrong++
     }
-    if (ans2 === 'Tom Seaver') {
+    if (ans2 === "Tom Seaver") {
       right++
     } else {
       wrong++
     }
-    if (ans3 === 'all of these') {
+    if (ans3 === "all of these") {
       right++
     } else {
       wrong++
     }
-    if (ans4 === 'New York Jets') {
+    if (ans4 === "New York Jets") {
       right++
     } else {
       wrong++
     }
-    if (ans5 === 'Joe Namath') {
+    if (ans5 === "Joe Namath") {
       right++
     } else {
       wrong++
     }
-    if (ans6 === 'New York Knicks') {
+    if (ans6 === "New York Knicks") {
       right++
     } else {
       wrong++
     }
-    if (ans7 === 'Baltimore') {
+    if (ans7 === "Baltimore") {
       right++
     } else {
       wrong++
     }
-    if (ans8 === 'July') {
+    if (ans8 === "July") {
       right++
     } else {
       wrong++
     }
-    if (ans9 === 'Neil Armstrong') {
+    if (ans9 === "Neil Armstrong") {
       right++
     } else {
       wrong++
     }
-    if (ans10 === 'Richard Nixon') {
+    if (ans10 === "Richard Nixon") {
       right++
     } else {
       wrong++
     }
-
-    $('#score').text("Correct: " + right + " Incorrect: " + wrong);
+    counter = 0;
+    $("#start").hide();
+    $("#submit").hide();
+    $("#score").text("Correct: " + right + " Incorrect: " + wrong);
   }
 
   counter = 45;
-  $('.card-text').hide();
+  $(".card-text").hide();
 
-  $('#start').on('click', function() {
-    $('.card-text').fadeIn();
-    $('#timer').empty();
-    $('#timer').text('time: ' + counter + ' sec')
+  $("#start").on("click", function() {
+    $(".card-text").fadeIn();
+    $("#timer").empty();
+    $("#timer").text("time: " + counter + " sec")
 
     setTimeout(countDown, 1000);
 
@@ -92,11 +94,11 @@ $(document).ready(function() {
       {
         results();
       }
-      $('#timer').text('time: ' + counter + ' sec')
+      $("#timer").text("time: " + counter + " sec")
     }
   })
 
-  $('#submit').on('click', function() {
+  $("#submit").on("click", function() {
     clicked = true;
     results();
   })
