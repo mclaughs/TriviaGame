@@ -3,6 +3,7 @@ $(document).ready(function() {
   var counter = 0;
   var right = 0
   var wrong = 0
+  clicked = false;
 
   function results() {
 
@@ -87,7 +88,7 @@ $(document).ready(function() {
         counter--;
         setTimeout(countDown, 1000);
       }
-      else if (counter === 0)
+      else if ((counter === 0) && (clicked === false))
       {
         results();
       }
@@ -96,6 +97,7 @@ $(document).ready(function() {
   })
 
   $('#submit').on('click', function() {
+    clicked = true;
     results();
   })
 
